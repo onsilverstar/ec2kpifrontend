@@ -1,0 +1,27 @@
+.leftdashboard{
+    display: inline-block;
+    height: 20rem;
+    width: 24rem;
+    margin: 0.5rem;
+    background-color: blue;
+}
+
+.wrapper{
+    margin:0.5rem;
+    padding: 0.5rem;
+    height:40rem;
+    width:60rem;
+}
+
+.divwrapper{
+    margin:0.5rem;
+    padding: 0.5rem;
+    height:35rem;
+    width:80rem;
+}
+
+.login{
+    width: 50%;
+    display: block;
+    margin:auto;
+}
