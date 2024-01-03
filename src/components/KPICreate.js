@@ -97,7 +97,7 @@ const KPICreate = (props) =>
       const handleChangeDepartment = (e)=> {
         e.preventDefault()
         setdepartment(e.target.value)
-        setcurrData((data)=>{return {...data,"department":getGuid(e.target.value)}});
+        setcurrData((data)=>{return {...data,"department_id":getGuid(e.target.value)}});
       }
 
       const handleChangeWeight = (e)=> {
@@ -141,7 +141,7 @@ const KPICreate = (props) =>
     const getGuid = (data)=>{
         for(let i =0; i<departments.length; i++)
         {
-            if(departments[i]==data)
+            if(departments[i]["title"]==data)
             {
                 return departments[i]["guid"]
             }
@@ -187,14 +187,14 @@ const KPICreate = (props) =>
     }
 
       const handleOnSubmit = (e) =>{
-        e.preventDefault()
+        //e.preventDefault()
         let kpi = name+"_"+year+"_"+quarter
         setkpi_id(kpi)
         //setcurrData((data)=>{return {...data,"guid":kpi}})
 
         const data = currData
         data["guid"] = getNum(kpi)
-        data["stage"] = "reporting_lead"
+        data["stage"] = "Reporting Lead"
         console.log(data)
         console.log(currDataUsers)
         fetch("https://kpiapi.mtandauza.com/createkpi",

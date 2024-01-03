@@ -84,7 +84,7 @@ const Home = ()=>{
 
     }
     // const getKPIS = async ()=>{
-    //     let response = await fetch("http://127.0.0.1:8000/kpimetrics")
+    //     let response = await fetch("https://kpiapi.mtandauza.com/kpimetrics")
     //     let data = await response.json()
     //     let result = []
     //     if(data)

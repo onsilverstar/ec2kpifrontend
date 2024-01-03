@@ -30,7 +30,7 @@ let a = "hello"
       <Routes>
         {/* <Route path="/login" element={<Login getLogin={getLogin} hello={a}/> }/> */}
         <Route path="/register" element={<Register/>}/>
-        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/" element={<HomeWrapper getuser={getuser}/>}/>
         <Route path="/:id/:title" element={<KPIView user={user}/>}/>
         <Route path="/kpis/:id" element={<KPIs/>}/>
         <Route path="/kpi/:id/" element={<KPIMetricView user={user}/>}/>

@@ -34,7 +34,8 @@ const KPIView = (props) =>
            getKPISumm()
            getKPIMetric().then(
             (data)=>{
-                getScore(data)
+                let data2 = getKPIMeasure()
+                getScore(data, data2)
             }
            )
            getKPIMeasure().then(
@@ -57,7 +58,7 @@ const KPIView = (props) =>
             for(let i=0; i<result.length; i++)
                     {
                     
-                    if(result[i]["KPI"] == kpi_id)
+                    if(parseInt(result[i]["KPI"]) == parseInt(params.id))
                     {
                             setcurrData(result[i])
                     }
@@ -79,36 +80,50 @@ const KPIView = (props) =>
         console.log(getKPIData(kpi_id)["cycle_target_quantitative"])
     }
 
-    const getScore = async(data)=>{
-
-        let target = parseFloat(data[0]["ytd_target"])
-        let actual = parseFloat(data[0]["ytd_quantitative"])
-        let weight = parseFloat(data[0]["kpi_weight"])
+    const getScore = async (data, data2)=>{
+        let data3 = await data2
+        let data4 = data3.pop()
+        let result = data[0]
+        console.log(data3.pop())
+        
+        let target = parseFloat(data4["target_ytd"])
+        let actual = parseFloat(data4["actual_ytd"])
+        let weight = parseFloat(result["kpi_weight"])
         let score = (actual/target)*weight
-        console.log(data)
+        console.log(result)
         console.log(target)
         console.log(actual)
+        console.log(score)
 
         if(score>weight)
         {
             score = weight
         }
 
-        let update = await fetch("https://kpiapi.mtandauza.com/editkpi",
+        console.log(score)
+
+        let update = fetch("https://kpiapi.mtandauza.com/editkpi",
         {
             method: "POST",
             headers: {
               'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({"guid":params.id, "score":score})
+            body: JSON.stringify({"guid":params.id, "ytd_target":target, "ytd_quantitative":actual, "score":score})
         })
         return score
     }
 
     const getKPIMeasure = async ()=>
     {
+        let result = []
         let response = await fetch(url_kpi_measure)
-        let result = await response.json()
+        let data = await response.json()
+        for(let i=0; i<data.length; i++){
+            if(parseInt(data[i]["KPI"]) == parseInt(params.id))
+            {
+                result.push(data[i])
+            }
+        }
         setkpimeasure(result)
         return result
     }
@@ -161,10 +176,11 @@ const KPIView = (props) =>
     }
 
     const getKPIData = (id)=>{
+        console.log(id)
         for(let i=0; i<kpi_summ.length; i++)
         {
         
-           if(kpi_summ[i]["KPI"] == id)
+           if(parseInt(kpi_summ[i]["KPI"]) == parseInt(id))
            {
                 return kpi_summ[i]
            }

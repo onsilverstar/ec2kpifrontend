@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
 
 
-const url_weekly_metrics = "https://kpiapi.mtandauza.com//kpimeasures"
+const url_weekly_metrics = "https://kpiapi.mtandauza.com/kpimeasures"
 
 
 const WeeklyMetrics = (props) =>

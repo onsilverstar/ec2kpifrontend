@@ -64,11 +64,10 @@ const WeeklyMetricsView = (props) =>
         data = await data.json()
     }
     
-      const handleSubmit = (e) =>{
+      const handleSubmit = async(e) =>{
         e.preventDefault()
-        updateKPIs()
         const data = currData
-        fetch("https://kpiapi.mtandauza.com/editkpimeasure",
+        const update = await fetch("https://kpiapi.mtandauza.com/editkpimeasure",
         {
           method: "POST",
           headers: {
@@ -76,6 +75,7 @@ const WeeklyMetricsView = (props) =>
           },
           body: JSON.stringify(data)
         })
+        updateKPIs()
       }
 
     console.log(currData)

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import React,{useState } from 'react';
 import AlertStartYear from './AlertStartYear';
 import 'react-toastify/dist/ReactToastify.css';
-import {ToastContainer, toast } from 'react-toastify';
+//import {ToastContainer, toast } from 'react-toastify';
 
 const NavigationBar = (props) => {
 const navigate = useNavigate()
@@ -30,12 +30,12 @@ const handleSubmit = (e)=>
       
   }
 
-  const notify = () => {toast.success("Successfully Started Year")}
+  //const notify = () => {toast.success("Successfully Started Year")}
 
   const handleStartYear = (e)=>{
     e.preventDefault()
     fetch("https://kpiapi.mtandauza.com/createkpimeasuretodate")
-    notify(e)
+    //notify(e)
   }
 
   const handleCreateDep = (e)=>{
@@ -51,7 +51,6 @@ const handleSubmit = (e)=>
 
     return (
       <div>
-        <ToastContainer />
         <Navbar Navbar fixed="top" bg="light" expand="lg">
           <Container>
             <Navbar.Brand><Link to={"/home"} style={{ textDecoration: 'none' }}><div style={{color:'var(--bs-navbar-color)'}}>Dashboard</div></Link></Navbar.Brand>

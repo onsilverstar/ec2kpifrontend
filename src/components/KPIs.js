@@ -112,11 +112,11 @@ const KPIs = (props)=>
     }
 
     function handleClick(key){
-        if(props.kpi == "edit")
-        {
-            navigate(`/kpi/${key}`)
-        }
-        else
+        // if(props.kpi == "edit")
+        // {
+        //     navigate(`/kpi/${key}`)
+        // }
+        //else
         {
             navigate(`/${key}/${title}`) 
         }
