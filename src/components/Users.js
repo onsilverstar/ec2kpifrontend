@@ -6,7 +6,7 @@ import NavigationBar from "./Navbar"
 
 
 
-const url_users = "https://kpiapi.mtandauza.com"
+const url_users = "https://cencleanback.mtandauza.com/"
 
 const Users = (props) =>
 {
