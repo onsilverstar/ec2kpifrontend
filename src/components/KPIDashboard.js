@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
 
 
-const url_kpi_metrics = "https://kpiapi.mtandauza.com/kpidashboard"
+const url_kpi_metrics = "https://cencleanback.mtandauza.com/kpidashboard"
 
 
 const KPIDashboard = (props) =>

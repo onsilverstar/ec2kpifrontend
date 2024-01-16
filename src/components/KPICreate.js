@@ -152,14 +152,14 @@ const KPICreate = (props) =>
 
       const getUsers = async ()=>
     {
-        let response = await fetch("https://kpiapi.mtandauza.com/")
+        let response = await fetch("https://cencleanback.mtandauza.com/")
         let result = await response.json()
         setusers(result)
     }
 
     const getDepartments = async ()=>
     {
-        let response = await fetch("https://kpiapi.mtandauza.com/department")
+        let response = await fetch("https://cencleanback.mtandauza.com/department")
         let result = await response.json()
         setdepartments(result)
     }
@@ -197,7 +197,7 @@ const KPICreate = (props) =>
         data["stage"] = "Reporting Lead"
         console.log(data)
         console.log(currDataUsers)
-        fetch("https://kpiapi.mtandauza.com/createkpi",
+        fetch("https://cencleanback.mtandauza.com/createkpi",
         {
           method: "POST",
           headers: {
@@ -209,7 +209,7 @@ const KPICreate = (props) =>
                 for(let i=0; i<currDataUsers.length; i++)
         {
             currDataUsers[i]["kpi"]= data["guid"]
-            fetch("https://kpiapi.mtandauza.com/addusertokpi",
+            fetch("https://cencleanback.mtandauza.com/addusertokpi",
             {
               method: "POST",
               headers: {

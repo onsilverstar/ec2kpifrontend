@@ -34,7 +34,7 @@ const handleSubmit = (e)=>
 
   const handleStartYear = (e)=>{
     e.preventDefault()
-    fetch("https://kpiapi.mtandauza.com/createkpimeasuretodate")
+    fetch("https://cencleanback.mtandauza.com/createkpimeasuretodate")
     //notify(e)
   }
 

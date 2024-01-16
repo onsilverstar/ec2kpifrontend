@@ -7,8 +7,8 @@ import * as dfd from "danfojs"
 import Plot from 'react-plotly.js'
 import NavigationBar from './Navbar';
 
-const url_kpi_metrics = "https://kpiapi.mtandauza.com/kpidashboard"
-const url_kpi_measure = "https://kpiapi.mtandauza.com/kpimeasures"
+const url_kpi_metrics = "https://cencleanback.mtandauza.com/kpidashboard"
+const url_kpi_measure = "https://cencleanback.mtandauza.com/kpimeasures"
 
 
 
@@ -65,7 +65,7 @@ const KPIView = (props) =>
                     }
 
         }
-        let update = await fetch("https://kpiapi.mtandauza.com/editkpi",
+        let update = await fetch("https://cencleanback.mtandauza.com/editkpi",
         {
             method: "POST",
             headers: {
@@ -102,7 +102,7 @@ const KPIView = (props) =>
 
         console.log(score)
 
-        let update = fetch("https://kpiapi.mtandauza.com/editkpi",
+        let update = fetch("https://cencleanback.mtandauza.com/editkpi",
         {
             method: "POST",
             headers: {
@@ -130,7 +130,7 @@ const KPIView = (props) =>
 
     const getKPIMetric = async ()=>
     {
-        let response = await fetch("https://kpiapi.mtandauza.com/searchkpi",
+        let response = await fetch("https://cencleanback.mtandauza.com/searchkpi",
         {
             method: "POST",
             headers: {
@@ -190,7 +190,7 @@ const KPIView = (props) =>
     }
 
     const getApprovalStatus = async()=>{
-        let status = await fetch("https://kpiapi.mtandauza.com/validateedit",
+        let status = await fetch("https://cencleanback.mtandauza.com/validateedit",
         {
             method: "POST",
             headers: {
@@ -240,7 +240,7 @@ const KPIView = (props) =>
         let status = await getApprovalStatus()
         if (status["status"] == "Allowed")
         {
-            let result = await fetch("https://kpiapi.mtandauza.com/editkpi",
+            let result = await fetch("https://cencleanback.mtandauza.com/editkpi",
             {
                 method: "POST",
                 headers: {

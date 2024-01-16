@@ -23,7 +23,7 @@ const WeeklyMetricsView = (props) =>
 
 
     const getcurrData = async (id)=>{
-        let response = await fetch("https://kpiapi.mtandauza.com/searchkpimeasure",
+        let response = await fetch("https://cencleanback.mtandauza.com/searchkpimeasure",
                 {
                     method: "POST",
                     headers: {
@@ -60,14 +60,14 @@ const WeeklyMetricsView = (props) =>
       }
 
       const updateKPIs = async()=>{
-        let data = await fetch("https://kpiapi.mtandauza.com/kpiupdatemeasure")
+        let data = await fetch("https://cencleanback.mtandauza.com/kpiupdatemeasure")
         data = await data.json()
     }
     
       const handleSubmit = async(e) =>{
         e.preventDefault()
         const data = currData
-        const update = await fetch("https://kpiapi.mtandauza.com/editkpimeasure",
+        const update = await fetch("https://cencleanback.mtandauza.com/editkpimeasure",
         {
           method: "POST",
           headers: {

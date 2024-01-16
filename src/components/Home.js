@@ -52,13 +52,13 @@ const Home = ()=>{
      }, [])
 
      const getKPISDeps = async ()=>{
-        let response = await fetch("https://kpiapi.mtandauza.com/kpibydepartment")
+        let response = await fetch("https://cencleanback.mtandauza.com/kpibydepartment")
         let data = await response.json()
         return data
     }
 
     const getSumm = async(filter)=>{
-        let response = await fetch("https://kpiapi.mtandauza.com/kpibydepartment")
+        let response = await fetch("https://cencleanback.mtandauza.com/kpibydepartment")
         let data = await response.json()
         let result = []
         for (var entry in data)
@@ -84,7 +84,7 @@ const Home = ()=>{
 
     }
     // const getKPIS = async ()=>{
-    //     let response = await fetch("https://kpiapi.mtandauza.com/kpimetrics")
+    //     let response = await fetch("https://cencleanback.mtandauza.com/kpimetrics")
     //     let data = await response.json()
     //     let result = []
     //     if(data)

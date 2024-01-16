@@ -7,7 +7,7 @@ import NavigationBar from './Navbar';
 import { useForm } from "react-hook-form";
 import { Str } from 'danfojs';
 
-const url_kpi_metrics = "https://kpiapi.mtandauza.com/kpimetrics"
+const url_kpi_metrics = "https://cencleanback.mtandauza.com/kpimetrics"
 
 
 
@@ -61,7 +61,7 @@ const KPIMetricView = (props) =>
 
     const getUsers = async ()=>
     {
-        let response = await fetch("https://kpiapi.mtandauza.com/")
+        let response = await fetch("https://cencleanback.mtandauza.com/")
         let result = await response.json()
         setusers(result)
     }
@@ -80,7 +80,7 @@ const KPIMetricView = (props) =>
 
     const getDepartments = async ()=>
     {
-        let response = await fetch("https://kpiapi.mtandauza.com/department")
+        let response = await fetch("https://cencleanback.mtandauza.com/department")
         let result = await response.json()
         setdepartments(result)
     }
@@ -96,7 +96,7 @@ const KPIMetricView = (props) =>
     // }
 
     const getKPIData = async (id)=>{
-        let response = await fetch("https://kpiapi.mtandauza.com/searchkpi",
+        let response = await fetch("https://cencleanback.mtandauza.com/searchkpi",
                 {
                     method: "POST",
                     headers: {
@@ -205,7 +205,7 @@ const KPIMetricView = (props) =>
       const handleOnSubmit = (e) =>{
         // e.preventDefault();
         const data = currData
-        fetch("https://kpiapi.mtandauza.com/editkpi",
+        fetch("https://cencleanback.mtandauza.com/editkpi",
         {
           method: "POST",
           headers: {
@@ -215,7 +215,7 @@ const KPIMetricView = (props) =>
         })
         for(let i=0; i<currDataUsers.length; i++)
         {
-            fetch("https://kpiapi.mtandauza.com/addusertokpi",
+            fetch("https://cencleanback.mtandauza.com/addusertokpi",
             {
               method: "POST",
               headers: {

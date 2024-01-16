@@ -33,7 +33,7 @@ function HomeLogin(props) {
   const handleOnSubmit = async(e) =>{
     // e.preventDefault()
     const data = {"email": email, "password": password}
-    let response = await fetch("https://kpiapi.mtandauza.com/login",
+    let response = await fetch("https://cencleanback.mtandauza.com/login",
     {
       method: "POST",
       headers: {

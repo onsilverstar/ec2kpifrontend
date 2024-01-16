@@ -33,7 +33,7 @@ function CreateUser() {
   }
   const handleOnSubmit = () =>{
     const data = {"first_name": first_name, "last_name": last_name, "email": email, "password": password}
-    fetch("https://kpiapi.mtandauza.com/createuser",
+    fetch("https://cencleanback.mtandauza.com/createuser",
     {
       method: "POST",
       headers: {
